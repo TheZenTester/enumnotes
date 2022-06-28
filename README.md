@@ -40,6 +40,23 @@ As of now, this list is from TJ Null's TJ-JPT file. The plan is to layout the in
 	- Windows AMSI Bypass
 	- Netcat
 4. Post Exploitation
+	- Port Redirection: my notes on RINETD and Chisel
+	- PRiv Esc: Linux, Windows, PTH, Stored Creds
+	- General Notes: Spawn TTY, `PowerSharpPack`, Priv Esc Scripts, Location for Scripts, Intersting Files (cronjob)
+	- Compiling Exploits
+	- Transferring Files: ftp, web, powercat, scp, windows SMB share (rdesktop, impacket), Impacket SMB Serving, windows binaries, certutil.exe, bitsadmin, wget, powershell, cscript.exe
+	- C2Frameworks: Empire C2, Covenant
+	- Bloodhound
+	- Impacket: Silver Ticket, Golden Ticket, Secrestdump
+	- Rubeus
+	- Mimikatz
+	- Interesting Files: Windows, Linux
+	- Installed Applications: Windows, Linux
+	- Network Info: Windows, Linux
+	- Running Processes: Windows, Linux
+	- Scheduled Jobs/Tasks: Windows, Linux
+	- System Info: Windows, Linux
+	- Users & Groups: Windows, Linux
 5. High Value Information
 - Hashes
 	- Dumping Hashes
