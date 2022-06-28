@@ -9,7 +9,7 @@ Tool to act as a repository for all of my shortcuts and notes.  This project is 
 `netexp [step] [sub-step]`
 
 ## Steps/Sub-step
-As of now, this list is from TJ Null's TJ-JPT file
+As of now, this list is from TJ Null's TJ-JPT file. The plan is to layout the information as displayed in the JPT file, make sure my tweaks of the file are logical
 1. Recon
 - General Checklist
 	- tcpdump
@@ -23,6 +23,15 @@ As of now, this list is from TJ Null's TJ-JPT file
 	- Sublist3r (subdomain enum)
 	- OWASP amass
 2. Enumeration
+	- General Notes (Need to get from https://web.archive.org/web/20201122081447/http://www.0daysecurity.com/penetration-testing/enumeration.html)
+	- Responder
+	- Impacket (for Kerberoasting)
+	- Services
+		- Web - Organize Joplin Note
+		- SMB - Organize Joplin Note (compare with enum_smb) and remove redundancies
+		- Active Directory (AD) - Organize Joplin Note
+		- SNMP - `snmpwalk`, `nmap` NSEs, Metasploit Aux Modules, `onesixtyone`, `snmpcheck`, Impacket (samdump.py)
+		- FTP - `nmap` NSEs, manual connection
 3. Explotation
 4. Post Exploitation
 5. High Value Information
