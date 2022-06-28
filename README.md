@@ -27,12 +27,18 @@ As of now, this list is from TJ Null's TJ-JPT file. The plan is to layout the in
 	- Responder
 	- Impacket (for Kerberoasting)
 	- Services
-		- Web - Organize Joplin Note
+		- Web - Organize Joplin Note (both General Note and SQL Injection)
 		- SMB - Organize Joplin Note (compare with enum_smb) and remove redundancies
 		- Active Directory (AD) - Organize Joplin Note
 		- SNMP - `snmpwalk`, `nmap` NSEs, Metasploit Aux Modules, `onesixtyone`, `snmpcheck`, Impacket (samdump.py)
 		- FTP - `nmap` NSEs, manual connection
 3. Explotation
+	- General Notes: Default Creds, Reverse shells (sources/links), reverse shell code
+	- AV Bypass
+	- Searchsploit
+	- msfvenom
+	- Windows AMSI Bypass
+	- Netcat
 4. Post Exploitation
 5. High Value Information
 - Hashes
