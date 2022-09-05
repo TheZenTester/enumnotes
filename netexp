@@ -1,0 +1,38 @@
+#!/bin/bash
+############################################################
+# Help                                                     #
+############################################################
+Help()
+{
+   # Display Help
+   echo "A reference guide for all the awesome pentesting notes."
+   echo "Notes sourced from TJNull's awesome JPT File, and personalized over my pentesting journey"
+   echo
+   echo "Syntax: netexp category sub-category"
+   echo
+   echo "Categories:"
+   echo "   recon       1) Reconnainssance - tcpdump, network scanning, nmap, DNS recon, dig, sublist3r, amass ,etc."
+   echo "   enum        2) Enumeration - old notes from 0daysecurity, all possible techniques to try "
+   echo "                  based on the open port. Recommended to use this as a last resort."
+   echo "   exp         3) Exploitation - default credentials, reverse shells, AV bypass, searchsploit, msfvenom, "
+   echo "                  Windows AMSI bypass, netcat"
+   echo "   postexp     4) Post-Exploitation - port redirection, priv esc, interestin files, compiling exploits, "
+   echo "                  transferring files, C2 frameworks, bloodhound, impacket"
+   echo "   hvi         5) High-Value Information - hashes, dumping hashes, identifying hash types, "
+   echo "                  online/offline hash cracking, hash cracking wordlists"
+   echo
+}
+
+############################################################
+############################################################
+# Main program                                             #
+############################################################
+############################################################
+# Get the options
+while getopts ":h" option; do
+   case $option in
+      h) # display Help
+         Help
+         exit;;
+   esac
+done
