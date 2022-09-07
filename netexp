@@ -12,8 +12,8 @@ Help()
    echo
    echo "Categories:"
    echo "   recon       1) Reconnainssance - tcpdump, network scanning, nmap, DNS recon, dig, sublist3r, amass ,etc."
-   echo "   enum        2) Enumeration - old notes from 0daysecurity, all possible techniques to try "
-   echo "                  based on the open port. Recommended to use this as a last resort."
+   echo "   enum        2) Enumeration - searches for common network services (Web, SMB, AD, SNMP, FTP, TCP, UDP, Other),"
+   echo "                  and old notes from 0daysecurity, all possible techniques to try based on the open port."
    echo "   exp         3) Exploitation - default credentials, reverse shells, AV bypass, searchsploit, msfvenom, "
    echo "                  Windows AMSI bypass, netcat"
    echo "   postexp     4) Post-Exploitation - port redirection, priv esc, interestin files, compiling exploits, "
