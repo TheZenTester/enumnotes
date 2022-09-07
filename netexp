@@ -61,5 +61,9 @@ fi
 if [[ $1 -eq "recon" ]] && [[ ! $2 =~ ^(general)$ ]]; then
    echo "Invalid Subcategory for recon"
    echo "Valid Subcategories: general"
+   echo
+   echo "Subcategory:"
+   echo "general     Output all commands: tcpdump, nmap, network/host scanning, dnsrecon, dig, sublist3r, amass"
+   echo
    exit
 fi
