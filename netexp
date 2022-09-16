@@ -105,11 +105,22 @@ elif [ $1 = "exp" ] && [[ ! $2 =~ ^(general|avbypass|ss|msfvenom|amsi|nc|bufoflo
    echo "bufoflow    references to learn buffer overflows"
    echo
    exit
-elif [ $1 = "postexp" ] && [[ ! $2 =~ ^(general)$ ]]; then
+elif [ $1 = "postexp" ] && [[ ! $2 =~ ^(files|apps|network|processes|jobs|sysinfo|users)$ ]]; then
    echo "Invalid Subcategory for postexp: $2"
-   echo "Valid Subcategories:  general"
+   echo "Valid Subcategories:  files, apps, network, processes, jobs, sysinfo, users"
    echo
    echo "Subcategory Description:"
+   echo "scripts     "
+   echo "files       Enumerate files on the system. Commands to execute searches, common files, file permissions"
+   echo "apps        List installed applications: Linux (Debian, RedHat, BSD, Gentoo, Arch Linux), "
+   echo "            Windows (PowerShell, remote application enumeration, WMI, WMIC, File permissions)"
+   echo "network     Enumerate what the target network topology, interfaces, DNS, configuration settings, "
+   echo "            current connections, firewall state/disable, ARP table, network shares, wifi passwords"
+   echo "processes   Enumerate processes running on the system: listing/terminating processes, Linux/Windows specific"
+   echo "jobs        Enumerate scheduled jobs and tasks. Linux/Windows specific"
+   echo "sysinfo     Enumerate system information. Linux (PowerShell, arch specific); Windows (cmd, PowerShell)"
+   echo "users       Enumerate users & groups - including: users, user permissions, groups, local/domain membership"
+   echo
    exit
 elif [ $1 = "hvi" ] && [[ ! $2 =~ ^(general)$ ]]; then
    echo "Invalid Subcategory for hvi: $2"
