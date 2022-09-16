@@ -43,18 +43,7 @@ if [[ ! $1 =~ ^(recon|enum|exp|postexp|hvi)$ ]]; then
   echo "Valid Categories: recon, enum, exp, postexp, hvi"
   echo "Correct Syntax: netexp [category] [subcategory]"
   echo
-  echo
-  echo "Categories:"
-  echo "   recon       1) Reconnainssance - tcpdump, network scanning, nmap, DNS recon, dig, sublist3r, amass ,etc."
-  echo "   enum        2) Enumeration - searches for common network services (Web, SMB, AD, SNMP, FTP, TCP, UDP, Other),"
-  echo "                  and old notes from 0daysecurity, all possible techniques to try based on the open port."
-  echo "   exp         3) Exploitation - default credentials, reverse shells, AV bypass, searchsploit, msfvenom, "
-  echo "                  Windows AMSI bypass, netcat"
-  echo "   postexp     4) Post-Exploitation - port redirection, priv esc, interestin files, compiling exploits, "
-  echo "                  transferring files, C2 frameworks, bloodhound, impacket"
-  echo "   hvi         5) High-Value Information - hashes, dumping hashes, identifying hash types, "
-  echo "                  online/offline hash cracking, hash cracking wordlists"
-  echo
+  Help
   exit
 fi
 
