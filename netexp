@@ -122,10 +122,16 @@ elif [ $1 = "postexp" ] && [[ ! $2 =~ ^(files|apps|network|processes|jobs|sysinf
    echo "users       Enumerate users & groups - including: users, user permissions, groups, local/domain membership"
    echo
    exit
-elif [ $1 = "hvi" ] && [[ ! $2 =~ ^(general)$ ]]; then
+elif [ $1 = "hvi" ] && [[ ! $2 =~ ^(hahes|crackoff|pwguess|wifi)$ ]]; then
    echo "Invalid Subcategory for hvi: $2"
    echo "Valid Subcategories: general"
    echo
    echo "Subcategory Description:"
+   echo "hashes      Identifying, collecting, and dumping hashes. Includes: metasploit, impacket, samdump, unshadow"
+   echo "            MacOSX, lsassy"
+   echo "crackoff    Cracking hashes offline using hashcat/john."
+   echo "pwguess     Guessing passwords over the network using medusa/hydra"
+   echo "wifi        Using airmon-ng, airodump-ng, aireplay-ng, aircrack-ng, hashcat and john to crack"
+   echo "            WEBP/WPA/WPA2 PSK Authentication"
    exit
 fi
