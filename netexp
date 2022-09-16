@@ -68,7 +68,7 @@ if [ $1 = "recon" ] && [[ ! $2 =~ ^(general)$ ]]; then
    exit
 elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|smb|ad|snmp|ftp|general)$ ]]; then
    echo "Invalid Subcategory for enum"
-   echo "Valid Subcategories: general"
+   echo "Valid Subcategories: web, smb, ad, snmp, ftp, general"
    echo
    echo "Subcategory:"
    echo "web         enumeration tactics for web services. Includes: enumeration overview, directory scanning,"
