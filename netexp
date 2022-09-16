@@ -124,3 +124,19 @@ elif [ $1 = "hvi" ] && [[ ! $2 =~ ^(hahes|crackoff|pwguess|wifi)$ ]]; then
    echo "            WEBP/WPA/WPA2 PSK Authentication"
    exit
 fi
+
+if [ $1 = "recon" ]; then
+   if [[ $2 =~ ^general$ ]]; then
+      glow recon/general.md -p
+   elif [ $1 = "blah" ]; then
+      exit
+   fi
+elif [$1 = "enum"]; then
+   exit
+elif [$1 = "exp"]; then
+   exit
+elif [$1 = "postexp"]; then
+   exit
+elif [$1 = "hvi"]; then
+   exit
+fi
