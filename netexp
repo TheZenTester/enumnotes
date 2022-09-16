@@ -38,10 +38,11 @@ while getopts ":h" option; do
 done
 
 ## Error Handling for incorrect categories
-if [[ ! $1 =~ ^(recon|enum|exp|postexp|hvi)$ ]]; then 
+if [[ ! $1 =~ ^(recon|enum|exp|postexp|hvi)$ ]]; then
+  echo "Invalid category entered: $1"
+  echo "Valid Categories: recon, enum, exp, postexp, hvi"
   echo "Correct Syntax: netexp [category] [subcategory]"
   echo
-  echo "Valid Categories: recon, enum, exp, postexp, hvi"
   echo
   echo "Categories:"
   echo "   recon       1) Reconnainssance - tcpdump, network scanning, nmap, DNS recon, dig, sublist3r, amass ,etc."
@@ -59,18 +60,18 @@ fi
 
 # Error Handling for incorrect subcategories
 if [ $1 = "recon" ] && [[ ! $2 =~ ^(general)$ ]]; then
-   echo "Invalid Subcategory for recon"
+   echo "Invalid Subcategory for recon: $2"
    echo "Valid Subcategories: general"
    echo
-   echo "Subcategory:"
+   echo "Subcategory Description:"
    echo "general     Output all commands: tcpdump, nmap, network/host scanning, dnsrecon, dig, sublist3r, amass"
    echo
    exit
 elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|smb|ad|snmp|ftp|general)$ ]]; then
-   echo "Invalid Subcategory for enum"
+   echo "Invalid Subcategory for enum: $2"
    echo "Valid Subcategories: web, smb, ad, snmp, ftp, general"
    echo
-   echo "Subcategory:"
+   echo "Subcategory Description:"
    echo "web         enumeration tactics for web services. Includes: enumeration overview, directory scanning,"
    echo "            web app/directory scanning wordlists, web app scanners, local file inclusion (LFI) testing,"
    echo "            remote file inclusion (RFI), reverse shell, password guessing (hydra/wfuzz)"
@@ -85,5 +86,35 @@ elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|smb|ad|snmp|ftp|general)$ ]]; then
    echo "general     WARNING: LARGE OUTPUT! - outputs the 0daysecurity list of possible enumeration steps"
    echo "            for commonly known ports (25-9100)."
    echo
+   exit
+elif [ $1 = "exp" ] && [[ ! $2 =~ ^(general|avbypass|ss|msfvenom|amsi|nc|bufoflow)$ ]]; then
+   echo "Invalid Subcategory for enum: $2"
+   echo "Valid Subcategories: general, avbypass, ss, msfvenom, amsi, nc, bufoflow"
+   echo
+   echo "Subcategory Description:"
+   echo "general     prereqs for running exploits, default credentials links, reverse shell lists/examples "
+   echo "            (netcat, bash, perl, python, IPv6, ruby, php, PowerShell, golang, awk)"
+   echo "avbypass    resources to use for AV bypass: Veil framework, shellter, sharpshooter, donut, vulcan,"
+   echo "            scarecrow"
+   echo "ss          searchsploit syntax reference guide - install searchsploit/binsploits, basic searching,"
+   echo "            search result exclusion, view exploits, copy exploit, website access, nmap scan analysis"
+   echo "msfvenom    msfvenom syntax for creating payloads: windows, linux, web (PHP, ASP, JSP, WAR),"
+   echo "            scripting (python, bash perl), encoding, templates"
+   echo "amsi        Bypassing Windows AMSI resources: testing, PowerShell bypass & other resources"
+   echo "nc          netcat tips"
+   echo "bufoflow    references to learn buffer overflows"
+   echo
+   exit
+elif [ $1 = "postexp" ] && [[ ! $2 =~ ^(general)$ ]]; then
+   echo "Invalid Subcategory for postexp: $2"
+   echo "Valid Subcategories:  general"
+   echo
+   echo "Subcategory Description:"
+   exit
+elif [ $1 = "hvi" ] && [[ ! $2 =~ ^(general)$ ]]; then
+   echo "Invalid Subcategory for hvi: $2"
+   echo "Valid Subcategories: general"
+   echo
+   echo "Subcategory Description:"
    exit
 fi
