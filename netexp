@@ -58,12 +58,32 @@ if [[ ! $1 =~ ^(recon|enum|exp|postexp|hvi)$ ]]; then
 fi
 
 # Error Handling for incorrect subcategories
-if [[ $1 -eq "recon" ]] && [[ ! $2 =~ ^(general)$ ]]; then
+if [ $1 = "recon" ] && [[ ! $2 =~ ^(general)$ ]]; then
    echo "Invalid Subcategory for recon"
    echo "Valid Subcategories: general"
    echo
    echo "Subcategory:"
    echo "general     Output all commands: tcpdump, nmap, network/host scanning, dnsrecon, dig, sublist3r, amass"
+   echo
+   exit
+elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|smb|ad|snmp|ftp|general)$ ]]; then
+   echo "Invalid Subcategory for enum"
+   echo "Valid Subcategories: general"
+   echo
+   echo "Subcategory:"
+   echo "web         enumeration tactics for web services. Includes: enumeration overview, directory scanning,"
+   echo "            web app/directory scanning wordlists, web app scanners, local file inclusion (LFI) testing,"
+   echo "            remote file inclusion (RFI), reverse shell, password guessing (hydra/wfuzz)"
+   echo "smb         enumeration of SMB including: rpcclient, smbclient, crackmapexec, enum4linux/enum4linux-ng,"
+   echo "            impacket, smbmap, SMB-specific nmap scans"
+   echo "ad          Active Directory Enumeration: initial foothold enumeration, listing SMB shares, username mutation"
+   echo "            username/SID enumeration, etc. Tools included: impacket, ldapsearch, getadusers, lookupsid,"
+   echo "            rpcclient, secretsdump, psexec, wmiexec. Reference sheets: payloadallthethings, Attacking AD"
+   echo "snmp        SNMP enumeration: snmpwalk, SNMP-specific nmap scripts, metasploit modules, "
+   echo "            onesixtyone, snmp-check, impacket samdump"
+   echo "ftp         FTP enumeration: manual/browswer connection, nmap scripts, enumeration steps/ideas"
+   echo "general     WARNING: LARGE OUTPUT! - outputs the 0daysecurity list of possible enumeration steps"
+   echo "            for commonly known ports (25-9100)."
    echo
    exit
 fi
