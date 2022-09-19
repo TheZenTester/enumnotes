@@ -132,15 +132,15 @@ fi
 if [ $1 = "recon" ]; then
    if [[ $2 =~ ^general$ ]]; then
       glow recon/general.md -p
-   elif [[ $2 =~ ^general$ ]]; then
-      exit
    fi
-elif [$1 = "enum"]; then
+elif [ $1 = "enum" ]; then
+   if [[ $2 =~ ^web$ ]]; then
+      glow enum/web.md -p
+   fi
+elif [ $1 = "exp" ]; then
    exit
-elif [$1 = "exp"]; then
+elif [ $1 = "postexp" ]; then
    exit
-elif [$1 = "postexp"]; then
-   exit
-elif [$1 = "hvi"]; then
+elif [ $1 = "hvi" ]; then
    exit
 fi
