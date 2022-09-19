@@ -56,7 +56,7 @@ if [ $1 = "recon" ] && [[ ! $2 =~ ^(general)$ ]]; then
    echo "general     Output all commands: tcpdump, nmap, network/host scanning, dnsrecon, dig, sublist3r, amass"
    echo
    exit
-elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|smb|ad|snmp|ftp|general)$ ]]; then
+elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|sqli|php|smb|ad|snmp|ftp|general)$ ]]; then
    echo "Invalid Subcategory for enum: $2"
    echo "Valid Subcategories: web, smb, ad, snmp, ftp, general"
    echo
@@ -64,6 +64,8 @@ elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|smb|ad|snmp|ftp|general)$ ]]; then
    echo "web         enumeration tactics for web services. Includes: enumeration overview, directory scanning,"
    echo "            web app/directory scanning wordlists, web app scanners, local file inclusion (LFI) testing,"
    echo "            remote file inclusion (RFI), reverse shell, password guessing (hydra/wfuzz)"
+   echo "sqli        Enumeration for SQL Injection, including: common bypass tests, sqlmap."
+   echo "php         Enumeration for PHP Code Analysis, including: global variables, dangerous functions" 
    echo "smb         enumeration of SMB including: rpcclient, smbclient, crackmapexec, enum4linux/enum4linux-ng,"
    echo "            impacket, smbmap, SMB-specific nmap scans"
    echo "ad          Active Directory Enumeration: initial foothold enumeration, listing SMB shares, username mutation"
