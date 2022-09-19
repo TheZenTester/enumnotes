@@ -56,7 +56,7 @@ if [ $1 = "recon" ] && [[ ! $2 =~ ^(general)$ ]]; then
    echo "general     Output all commands: tcpdump, nmap, network/host scanning, dnsrecon, dig, sublist3r, amass"
    echo
    exit
-elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|sqli|php|smb|ad|snmp|ftp|general)$ ]]; then
+elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|sqli|php|smb|ad|snmp|ftp|responder|impacket|general)$ ]]; then
    echo "Invalid Subcategory for enum: $2"
    echo "Valid Subcategories: web, smb, ad, snmp, ftp, general"
    echo
@@ -74,6 +74,8 @@ elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|sqli|php|smb|ad|snmp|ftp|general)$ ]]; 
    echo "snmp        SNMP enumeration: snmpwalk, SNMP-specific nmap scripts, metasploit modules, "
    echo "            onesixtyone, snmp-check, impacket samdump"
    echo "ftp         FTP enumeration: manual/browswer connection, nmap scripts, enumeration steps/ideas"
+   echo "responder   Enumeration notes on using Responder. Cannot be used for OSCP for Poisoning/Spoofing"
+   echo "impacket    Enumeration notes for Impacket, including kerberoasting commands"
    echo "general     WARNING: LARGE OUTPUT! - outputs the 0daysecurity list of possible enumeration steps"
    echo "            for commonly known ports (25-9100)."
    echo
@@ -130,7 +132,7 @@ fi
 if [ $1 = "recon" ]; then
    if [[ $2 =~ ^general$ ]]; then
       glow recon/general.md -p
-   elif [ $1 = "blah" ]; then
+   elif [[ $2 =~ ^general$ ]]; then
       exit
    fi
 elif [$1 = "enum"]; then
