@@ -137,7 +137,9 @@ if [ $1 = "recon" ]; then
 elif [ $1 = "enum" ]; then
    if [[ $2 =~ ^web$ ]]; then
       glow enum/web.md -p
-   elif [[ $2 =~ ^web$ ]]; then
+   elif [[ $2 =~ ^sqli$ ]]; then
+      glow enum/sqli.md -p
+   elif [[ $2 =~ ^php$ ]]; then
       glow enum/sqli.md -p
    fi
 elif [ $1 = "exp" ]; then
