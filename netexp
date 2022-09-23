@@ -129,6 +129,7 @@ elif [ $1 = "hvi" ] && [[ ! $2 =~ ^(hahes|crackoff|pwguess|wifi)$ ]]; then
    exit
 fi
 
+# Logic handling to launch notes
 if [ $1 = "recon" ]; then
    if [[ $2 =~ ^general$ ]]; then
       glow recon/general.md -p
@@ -136,6 +137,8 @@ if [ $1 = "recon" ]; then
 elif [ $1 = "enum" ]; then
    if [[ $2 =~ ^web$ ]]; then
       glow enum/web.md -p
+   elif [[ $2 =~ ^web$ ]]; then
+      glow enum/sqli.md -p
    fi
 elif [ $1 = "exp" ]; then
    exit
