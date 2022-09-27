@@ -147,6 +147,8 @@ elif [ $1 = "enum" ]; then
       glow enum/ad.md -p
    elif [[ $2 =~ ^snmp$ ]]; then
       glow enum/snmp.md -p
+   elif [[ $2 =~ ^ftp$ ]]; then
+      glow enum/ftp.md -p
    fi
 elif [ $1 = "exp" ]; then
    exit
