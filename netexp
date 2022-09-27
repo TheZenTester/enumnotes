@@ -143,6 +143,8 @@ elif [ $1 = "enum" ]; then
       glow enum/php.md -p
    elif [[ $2 =~ ^smb$ ]]; then
       glow enum/smb.md -p
+   elif [[ $2 =~ ^ad$ ]]; then
+      glow enum/ad.md -p
    fi
 elif [ $1 = "exp" ]; then
    exit
