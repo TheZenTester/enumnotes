@@ -73,7 +73,7 @@ elif [ $1 = "enum" ] && [[ ! $2 =~ ^(web|sqli|php|smb|ad|snmp|ftp|responder|impa
    echo "            rpcclient, secretsdump, psexec, wmiexec. Reference sheets: payloadallthethings, Attacking AD"
    echo "snmp        SNMP enumeration: snmpwalk, SNMP-specific nmap scripts, metasploit modules, "
    echo "            onesixtyone, snmp-check, impacket samdump"
-   echo "ftp         FTP enumeration: manual/browswer connection, nmap scripts, enumeration steps/ideas"
+   echo "ftp         FTP enumeration: manual/browser connection, nmap scripts, enumeration steps/ideas"
    echo "responder   Enumeration notes on using Responder. Cannot be used for OSCP for Poisoning/Spoofing"
    echo "impacket    Enumeration notes for Impacket, including kerberoasting commands"
    echo "general     WARNING: LARGE OUTPUT! - outputs the 0daysecurity list of possible enumeration steps"
@@ -149,6 +149,8 @@ elif [ $1 = "enum" ]; then
       glow enum/snmp.md -p
    elif [[ $2 =~ ^ftp$ ]]; then
       glow enum/ftp.md -p
+   elif [[ $2 =~ ^responder$ ]]; then
+      glow enum/responder.md -p
    fi
 elif [ $1 = "exp" ]; then
    exit
