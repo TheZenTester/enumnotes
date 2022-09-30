@@ -153,6 +153,8 @@ elif [ $1 = "enum" ]; then
       glow enum/responder.md -p
    elif [[ $2 =~ ^impacket$ ]]; then
       glow enum/impacket.md -p
+   elif [[ $2 =~ ^general$ ]]; then
+      glow enum/general.md -p
    fi
 elif [ $1 = "exp" ]; then
    exit
