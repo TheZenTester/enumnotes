@@ -157,6 +157,8 @@ elif [ $1 = "enum" ]; then
       glow enum/general.md -p
    fi
 elif [ $1 = "exp" ]; then
+   if [[ $2 =~ ^general$ ]]; then
+      glow exp/general.md -p
    exit
 elif [ $1 = "postexp" ]; then
    exit
