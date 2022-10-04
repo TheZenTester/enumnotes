@@ -160,6 +160,7 @@ elif [ $1 = "exp" ]; then
    if [[ $2 =~ ^general$ ]]; then
       glow exp/general.md -p
    exit
+   fi
 elif [ $1 = "postexp" ]; then
    exit
 elif [ $1 = "hvi" ]; then
