@@ -159,7 +159,10 @@ elif [ $1 = "enum" ]; then
 elif [ $1 = "exp" ]; then
    if [[ $2 =~ ^general$ ]]; then
       glow exp/general.md -p
-   exit
+   elif [[ $2 =~ ^avbypass$ ]]; then
+      glow exp/avbypass.md -p
+   elif [[ $2 =~ ^ss$ ]]; then
+      glow exp/ss.md -p
    fi
 elif [ $1 = "postexp" ]; then
    exit
