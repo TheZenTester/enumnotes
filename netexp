@@ -8,7 +8,7 @@ Help()
    echo "A reference guide for all the awesome pentesting notes."
    echo "Notes sourced from TJNull's awesome JPT File, and personalized over my pentesting journey"
    echo
-   echo "Syntax: netexp category sub-category"
+   echo "Syntax: netexp category sub-category [glow-flags]"
    echo
    echo "Categories:"
    echo "   recon       1) Reconnainssance - tcpdump, network scanning, nmap, DNS recon, dig, sublist3r, amass ,etc."
@@ -41,7 +41,7 @@ done
 if [[ ! $1 =~ ^(recon|enum|exp|postexp|hvi)$ ]]; then
   echo "Invalid category entered: $1"
   echo "Valid Categories: recon, enum, exp, postexp, hvi"
-  echo "Correct Syntax: netexp [category] [subcategory]"
+  echo "Correct Syntax: netexp category subcategory [glow flags]"
   echo
   Help
   exit
@@ -132,41 +132,42 @@ fi
 # Logic handling to launch notes
 if [ $1 = "recon" ]; then
    if [[ $2 =~ ^general$ ]]; then
-      glow recon/general.md $@
+      # pass to glow, allow for glow flags to be passed from netexp line.
+      glow recon/general.md ${@:3}
    fi
 elif [ $1 = "enum" ]; then
    if [[ $2 =~ ^web$ ]]; then
-      glow enum/web.md $@
+      glow enum/web.md ${@:3}
    elif [[ $2 =~ ^sqli$ ]]; then
-      glow enum/sqli.md $@
+      glow enum/sqli.md ${@:3}
    elif [[ $2 =~ ^php$ ]]; then
-      glow enum/php.md $@
+      glow enum/php.md ${@:3}
    elif [[ $2 =~ ^smb$ ]]; then
-      glow enum/smb.md $@
+      glow enum/smb.md ${@:3}
    elif [[ $2 =~ ^ad$ ]]; then
-      glow enum/ad.md $@
+      glow enum/ad.md ${@:3}
    elif [[ $2 =~ ^snmp$ ]]; then
-      glow enum/snmp.md $@
+      glow enum/snmp.md ${@:3}
    elif [[ $2 =~ ^ftp$ ]]; then
-      glow enum/ftp.md $@
+      glow enum/ftp.md ${@:3}
    elif [[ $2 =~ ^responder$ ]]; then
-      glow enum/responder.md $@
+      glow enum/responder.md ${@:3}
    elif [[ $2 =~ ^impacket$ ]]; then
-      glow enum/impacket.md $@
+      glow enum/impacket.md ${@:3}
    elif [[ $2 =~ ^general$ ]]; then
-      glow enum/general.md $@
+      glow enum/general.md ${@:3}
    fi
 elif [ $1 = "exp" ]; then
    if [[ $2 =~ ^general$ ]]; then
-      glow exp/general.md $@
+      glow exp/general.md ${@:3}
    elif [[ $2 =~ ^avbypass$ ]]; then
-      glow exp/avbypass.md $@
+      glow exp/avbypass.md ${@:3}
    elif [[ $2 =~ ^ss$ ]]; then
-      glow exp/ss.md $@
+      glow exp/ss.md ${@:3}
    elif [[ $2 =~ ^msfvenom$ ]]; then
-      glow exp/msfvenom.md $@
+      glow exp/msfvenom.md ${@:3}
    elif [[ $2 =~ ^amsi$ ]]; then
-      glow exp/amsi.md $@
+      glow exp/amsi.md ${@:3}
    elif [[ $2 =~ ^nc$ ]]; then
       glow exp/nc.md ${@:3}
    fi
