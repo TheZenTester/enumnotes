@@ -165,6 +165,8 @@ elif [ $1 = "exp" ]; then
       glow exp/ss.md -p
    elif [[ $2 =~ ^msfvenom$ ]]; then
       glow exp/msfvenom.md -p
+   elif [[ $2 =~ ^amsi$ ]]; then
+      glow exp/amsi.md -p
    fi
 elif [ $1 = "postexp" ]; then
    exit
