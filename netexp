@@ -132,41 +132,43 @@ fi
 # Logic handling to launch notes
 if [ $1 = "recon" ]; then
    if [[ $2 =~ ^general$ ]]; then
-      glow recon/general.md -p
+      glow recon/general.md $@
    fi
 elif [ $1 = "enum" ]; then
    if [[ $2 =~ ^web$ ]]; then
-      glow enum/web.md -p
+      glow enum/web.md $@
    elif [[ $2 =~ ^sqli$ ]]; then
-      glow enum/sqli.md -p
+      glow enum/sqli.md $@
    elif [[ $2 =~ ^php$ ]]; then
-      glow enum/php.md -p
+      glow enum/php.md $@
    elif [[ $2 =~ ^smb$ ]]; then
-      glow enum/smb.md -p
+      glow enum/smb.md $@
    elif [[ $2 =~ ^ad$ ]]; then
-      glow enum/ad.md -p
+      glow enum/ad.md $@
    elif [[ $2 =~ ^snmp$ ]]; then
-      glow enum/snmp.md -p
+      glow enum/snmp.md $@
    elif [[ $2 =~ ^ftp$ ]]; then
-      glow enum/ftp.md -p
+      glow enum/ftp.md $@
    elif [[ $2 =~ ^responder$ ]]; then
-      glow enum/responder.md -p
+      glow enum/responder.md $@
    elif [[ $2 =~ ^impacket$ ]]; then
-      glow enum/impacket.md -p
+      glow enum/impacket.md $@
    elif [[ $2 =~ ^general$ ]]; then
-      glow enum/general.md -p
+      glow enum/general.md $@
    fi
 elif [ $1 = "exp" ]; then
    if [[ $2 =~ ^general$ ]]; then
-      glow exp/general.md -p
+      glow exp/general.md $@
    elif [[ $2 =~ ^avbypass$ ]]; then
-      glow exp/avbypass.md -p
+      glow exp/avbypass.md $@
    elif [[ $2 =~ ^ss$ ]]; then
-      glow exp/ss.md -p
+      glow exp/ss.md $@
    elif [[ $2 =~ ^msfvenom$ ]]; then
-      glow exp/msfvenom.md -p
+      glow exp/msfvenom.md $@
    elif [[ $2 =~ ^amsi$ ]]; then
-      glow exp/amsi.md -p
+      glow exp/amsi.md $@
+   elif [[ $2 =~ ^nc$ ]]; then
+      glow exp/nc.md ${@:3}
    fi
 elif [ $1 = "postexp" ]; then
    exit
