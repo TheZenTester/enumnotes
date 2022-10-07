@@ -6,7 +6,7 @@ Tool to act as a repository for all of my shortcuts and notes.  This project is 
 - Have output print out in markdown format (i.e. glow , batcat)
 
 # Syntax
-`netexp [step] [sub-step]`
+`enumnotes step sub-step [glow-flags]`
 
 ## Steps/Sub-step
 As of now, this list is from TJ Null's TJ-JPT file. The plan is to layout the information as displayed in the JPT file, make sure my tweaks of the file are logical
