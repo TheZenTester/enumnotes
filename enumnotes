@@ -8,7 +8,7 @@ Help()
    echo "A reference guide for all the awesome pentesting notes."
    echo "Notes sourced from TJNull's awesome JPT File, and personalized over my pentesting journey"
    echo
-   echo "Syntax: netexp category sub-category [glow-flags]"
+   echo "Syntax: enumnotes category sub-category [glow-flags]"
    echo
    echo "Categories:"
    echo "   recon       1) Reconnainssance - tcpdump, network scanning, nmap, DNS recon, dig, sublist3r, amass ,etc."
@@ -41,7 +41,7 @@ done
 if [[ ! $1 =~ ^(recon|enum|exp|postexp|hvi)$ ]]; then
   echo "Invalid category entered: $1"
   echo "Valid Categories: recon, enum, exp, postexp, hvi"
-  echo "Correct Syntax: netexp category subcategory [glow flags]"
+  echo "Correct Syntax: enumnotes category subcategory [glow flags]"
   echo
   Help
   exit
@@ -132,7 +132,7 @@ fi
 # Logic handling to launch notes
 if [ $1 = "recon" ]; then
    if [[ $2 =~ ^general$ ]]; then
-      # pass to glow, allow for glow flags to be passed from netexp line.
+      # pass to glow, allow for glow flags to be passed from enumnotes line.
       glow recon/general.md ${@:3}
    fi
 elif [ $1 = "enum" ]; then
