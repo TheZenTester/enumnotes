@@ -176,6 +176,8 @@ elif [ $1 = "postexp" ]; then
       glow postexp/files.md ${@:3}
    elif [[ $2 =~ ^apps$ ]]; then
       glow postexp/apps.md ${@:3}
+   elif [[ $2 =~ ^network$ ]]; then
+      glow postexp/network.md ${@:3}
    fi
 elif [ $1 = "hvi" ]; then
    exit
