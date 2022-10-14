@@ -178,6 +178,10 @@ elif [ $1 = "postexp" ]; then
       glow postexp/apps.md ${@:3}
    elif [[ $2 =~ ^network$ ]]; then
       glow postexp/network.md ${@:3}
+   elif [[ $2 =~ ^processes$ ]]; then
+      glow postexp/processes.md ${@:3}
+   elif [[ $2 =~ ^jobs$ ]]; then
+      glow postexp/jobs.md ${@:3}
    fi
 elif [ $1 = "hvi" ]; then
    exit
