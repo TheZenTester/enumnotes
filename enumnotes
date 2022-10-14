@@ -172,7 +172,11 @@ elif [ $1 = "exp" ]; then
       glow exp/nc.md ${@:3}
    fi
 elif [ $1 = "postexp" ]; then
-   exit
+   if [[ $2 =~ ^files$ ]]; then
+      glow postexp/files.md ${@:3}
+   elif [[ $2 =~ ^apps$ ]]; then
+      glow postexp/apps.md ${@:3}
+   fi
 elif [ $1 = "hvi" ]; then
    exit
 fi
