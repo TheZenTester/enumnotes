@@ -182,6 +182,10 @@ elif [ $1 = "postexp" ]; then
       glow postexp/processes.md ${@:3}
    elif [[ $2 =~ ^jobs$ ]]; then
       glow postexp/jobs.md ${@:3}
+   elif [[ $2 =~ ^sysinfo$ ]]; then
+      glow postexp/sysinfo.md ${@:3}
+   elif [[ $2 =~ ^users$ ]]; then
+      glow postexp/users.md ${@:3}
    fi
 elif [ $1 = "hvi" ]; then
    exit
