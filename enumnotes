@@ -115,7 +115,7 @@ elif [ $1 = "postexp" ] && [[ ! $2 =~ ^(files|apps|network|processes|jobs|sysinf
    echo "users       Enumerate users & groups - including: users, user permissions, groups, local/domain membership"
    echo
    exit
-elif [ $1 = "hvi" ] && [[ ! $2 =~ ^(hahes|crackoff|pwguess|wifi)$ ]]; then
+elif [ $1 = "hvi" ] && [[ ! $2 =~ ^(hashes|crackoff|pwguess|wifi)$ ]]; then
    echo "Invalid Subcategory for hvi: $2"
    echo "Valid Subcategories: general"
    echo
