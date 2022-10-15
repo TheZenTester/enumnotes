@@ -133,59 +133,59 @@ fi
 if [ $1 = "recon" ]; then
    if [[ $2 =~ ^general$ ]]; then
       # pass to glow, allow for glow flags to be passed from enumnotes line.
-      glow recon/general.md ${@:3}
+      glow _recon/general.md ${@:3}
    fi
 elif [ $1 = "enum" ]; then
    if [[ $2 =~ ^web$ ]]; then
-      glow enum/web.md ${@:3}
+      glow _enum/web.md ${@:3}
    elif [[ $2 =~ ^sqli$ ]]; then
-      glow enum/sqli.md ${@:3}
+      glow _enum/sqli.md ${@:3}
    elif [[ $2 =~ ^php$ ]]; then
-      glow enum/php.md ${@:3}
+      glow _enum/php.md ${@:3}
    elif [[ $2 =~ ^smb$ ]]; then
-      glow enum/smb.md ${@:3}
+      glow _enum/smb.md ${@:3}
    elif [[ $2 =~ ^ad$ ]]; then
-      glow enum/ad.md ${@:3}
+      glow _enum/ad.md ${@:3}
    elif [[ $2 =~ ^snmp$ ]]; then
-      glow enum/snmp.md ${@:3}
+      glow _enum/snmp.md ${@:3}
    elif [[ $2 =~ ^ftp$ ]]; then
-      glow enum/ftp.md ${@:3}
+      glow _enum/ftp.md ${@:3}
    elif [[ $2 =~ ^responder$ ]]; then
-      glow enum/responder.md ${@:3}
+      glow _enum/responder.md ${@:3}
    elif [[ $2 =~ ^impacket$ ]]; then
-      glow enum/impacket.md ${@:3}
+      glow _enum/impacket.md ${@:3}
    elif [[ $2 =~ ^general$ ]]; then
-      glow enum/general.md ${@:3}
+      glow _enum/general.md ${@:3}
    fi
 elif [ $1 = "exp" ]; then
    if [[ $2 =~ ^general$ ]]; then
-      glow exp/general.md ${@:3}
+      glow _exp/general.md ${@:3}
    elif [[ $2 =~ ^avbypass$ ]]; then
-      glow exp/avbypass.md ${@:3}
+      glow _exp/avbypass.md ${@:3}
    elif [[ $2 =~ ^ss$ ]]; then
-      glow exp/ss.md ${@:3}
+      glow _exp/ss.md ${@:3}
    elif [[ $2 =~ ^msfvenom$ ]]; then
-      glow exp/msfvenom.md ${@:3}
+      glow _exp/msfvenom.md ${@:3}
    elif [[ $2 =~ ^amsi$ ]]; then
-      glow exp/amsi.md ${@:3}
+      glow _exp/amsi.md ${@:3}
    elif [[ $2 =~ ^nc$ ]]; then
-      glow exp/nc.md ${@:3}
+      glow _exp/nc.md ${@:3}
    fi
 elif [ $1 = "postexp" ]; then
    if [[ $2 =~ ^files$ ]]; then
-      glow postexp/files.md ${@:3}
+      glow _postexp/files.md ${@:3}
    elif [[ $2 =~ ^apps$ ]]; then
-      glow postexp/apps.md ${@:3}
+      glow _postexp/apps.md ${@:3}
    elif [[ $2 =~ ^network$ ]]; then
-      glow postexp/network.md ${@:3}
+      glow _postexp/network.md ${@:3}
    elif [[ $2 =~ ^processes$ ]]; then
-      glow postexp/processes.md ${@:3}
+      glow _postexp/processes.md ${@:3}
    elif [[ $2 =~ ^jobs$ ]]; then
-      glow postexp/jobs.md ${@:3}
+      glow _postexp/jobs.md ${@:3}
    elif [[ $2 =~ ^sysinfo$ ]]; then
-      glow postexp/sysinfo.md ${@:3}
+      glow _postexp/sysinfo.md ${@:3}
    elif [[ $2 =~ ^users$ ]]; then
-      glow postexp/users.md ${@:3}
+      glow _postexp/users.md ${@:3}
    fi
 elif [ $1 = "hvi" ]; then
    exit
