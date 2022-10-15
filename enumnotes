@@ -188,5 +188,13 @@ elif [ $1 = "postexp" ]; then
       glow _postexp/users.md ${@:3}
    fi
 elif [ $1 = "hvi" ]; then
-   exit
+   if [[ $2 =~ ^hashes$ ]]; then
+      glow _hvi/hashes.md ${@:3}
+   elif [[ $2 =~ ^crackoff$ ]]; then
+      glow _postexp/crackoff.md ${@:3}
+   elif [[ $2 =~ ^pwguess$ ]]; then
+      glow _postexp/pwguess.md ${@:3}
+   elif [[ $2 =~ ^wifi$ ]]; then
+      glow _postexp/wifi.md ${@:3}
+   fi
 fi
