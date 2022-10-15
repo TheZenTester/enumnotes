@@ -191,10 +191,10 @@ elif [ $1 = "hvi" ]; then
    if [[ $2 =~ ^hashes$ ]]; then
       glow _hvi/hashes.md ${@:3}
    elif [[ $2 =~ ^crackoff$ ]]; then
-      glow _postexp/crackoff.md ${@:3}
+      glow _hvi/crackoff.md ${@:3}
    elif [[ $2 =~ ^pwguess$ ]]; then
-      glow _postexp/pwguess.md ${@:3}
+      glow _hvi/pwguess.md ${@:3}
    elif [[ $2 =~ ^wifi$ ]]; then
-      glow _postexp/wifi.md ${@:3}
+      glow _hvi/wifi.md ${@:3}
    fi
 fi
