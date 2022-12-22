@@ -8,7 +8,7 @@ Help()
    echo "A reference guide for all the awesome pentesting notes."
    echo "Notes sourced from TJNull's awesome JPT File, and personalized over my pentesting journey"
    echo
-   echo "Syntax: enumnotes category sub-category [glow-flags]"
+   echo "Syntax: enumnotes.sh category sub-category [glow-flags]"
    echo
    echo "Categories:"
    echo "   recon       1) Reconnainssance - tcpdump, network scanning, nmap, DNS recon, dig, sublist3r, amass ,etc."
@@ -41,7 +41,7 @@ done
 if [[ ! $1 =~ ^(recon|enum|exp|postexp|hvi)$ ]]; then
   echo "Invalid category entered: $1"
   echo "Valid Categories: recon, enum, exp, postexp, hvi"
-  echo "Correct Syntax: enumnotes category subcategory [glow flags]"
+  echo "Correct Syntax: enumnotes.sh category subcategory [glow flags]"
   echo
   Help
   exit
