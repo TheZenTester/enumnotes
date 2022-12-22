@@ -133,68 +133,68 @@ fi
 if [ $1 = "recon" ]; then
    if [[ $2 =~ ^general$ ]]; then
       # pass to glow, allow for glow flags to be passed from enumnotes line.
-      glow _recon/general.md ${@:3}
+      glow /usr/local/bin/enumnotes/_recon/general.md ${@:3}
    fi
 elif [ $1 = "enum" ]; then
    if [[ $2 =~ ^web$ ]]; then
-      glow _enum/web.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/web.md ${@:3}
    elif [[ $2 =~ ^sqli$ ]]; then
-      glow _enum/sqli.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/sqli.md ${@:3}
    elif [[ $2 =~ ^php$ ]]; then
-      glow _enum/php.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/php.md ${@:3}
    elif [[ $2 =~ ^smb$ ]]; then
-      glow _enum/smb.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/smb.md ${@:3}
    elif [[ $2 =~ ^ad$ ]]; then
-      glow _enum/ad.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/ad.md ${@:3}
    elif [[ $2 =~ ^snmp$ ]]; then
-      glow _enum/snmp.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/snmp.md ${@:3}
    elif [[ $2 =~ ^ftp$ ]]; then
-      glow _enum/ftp.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/ftp.md ${@:3}
    elif [[ $2 =~ ^responder$ ]]; then
-      glow _enum/responder.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/responder.md ${@:3}
    elif [[ $2 =~ ^impacket$ ]]; then
-      glow _enum/impacket.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/impacket.md ${@:3}
    elif [[ $2 =~ ^general$ ]]; then
-      glow _enum/general.md ${@:3}
+      glow /usr/local/bin/enumnotes/_enum/general.md ${@:3}
    fi
 elif [ $1 = "exp" ]; then
    if [[ $2 =~ ^general$ ]]; then
-      glow _exp/general.md ${@:3}
+      glow /usr/local/bin/enumnotes/_exp/general.md ${@:3}
    elif [[ $2 =~ ^avbypass$ ]]; then
-      glow _exp/avbypass.md ${@:3}
+      glow /usr/local/bin/enumnotes/_exp/avbypass.md ${@:3}
    elif [[ $2 =~ ^ss$ ]]; then
-      glow _exp/ss.md ${@:3}
+      glow /usr/local/bin/enumnotes/_exp/ss.md ${@:3}
    elif [[ $2 =~ ^msfvenom$ ]]; then
-      glow _exp/msfvenom.md ${@:3}
+      glow /usr/local/bin/enumnotes/_exp/msfvenom.md ${@:3}
    elif [[ $2 =~ ^amsi$ ]]; then
-      glow _exp/amsi.md ${@:3}
+      glow /usr/local/bin/enumnotes/_exp/amsi.md ${@:3}
    elif [[ $2 =~ ^nc$ ]]; then
-      glow _exp/nc.md ${@:3}
+      glow /usr/local/bin/enumnotes/_exp/nc.md ${@:3}
    fi
 elif [ $1 = "postexp" ]; then
    if [[ $2 =~ ^files$ ]]; then
-      glow _postexp/files.md ${@:3}
+      glow /usr/local/bin/enumnotes/_postexp/files.md ${@:3}
    elif [[ $2 =~ ^apps$ ]]; then
-      glow _postexp/apps.md ${@:3}
+      glow /usr/local/bin/enumnotes/_postexp/apps.md ${@:3}
    elif [[ $2 =~ ^network$ ]]; then
-      glow _postexp/network.md ${@:3}
+      glow /usr/local/bin/enumnotes/_postexp/network.md ${@:3}
    elif [[ $2 =~ ^processes$ ]]; then
-      glow _postexp/processes.md ${@:3}
+      glow /usr/local/bin/enumnotes/_postexp/processes.md ${@:3}
    elif [[ $2 =~ ^jobs$ ]]; then
-      glow _postexp/jobs.md ${@:3}
+      glow /usr/local/bin/enumnotes/_postexp/jobs.md ${@:3}
    elif [[ $2 =~ ^sysinfo$ ]]; then
-      glow _postexp/sysinfo.md ${@:3}
+      glow /usr/local/bin/enumnotes/_postexp/sysinfo.md ${@:3}
    elif [[ $2 =~ ^users$ ]]; then
-      glow _postexp/users.md ${@:3}
+      glow /usr/local/bin/enumnotes/_postexp/users.md ${@:3}
    fi
 elif [ $1 = "hvi" ]; then
    if [[ $2 =~ ^hashes$ ]]; then
-      glow _hvi/hashes.md ${@:3}
+      glow /usr/local/bin/enumnotes/_hvi/hashes.md ${@:3}
    elif [[ $2 =~ ^crackoff$ ]]; then
-      glow _hvi/crackoff.md ${@:3}
+      glow /usr/local/bin/enumnotes/_hvi/crackoff.md ${@:3}
    elif [[ $2 =~ ^pwguess$ ]]; then
-      glow _hvi/pwguess.md ${@:3}
+      glow /usr/local/bin/enumnotes/_hvi/pwguess.md ${@:3}
    elif [[ $2 =~ ^wifi$ ]]; then
-      glow _hvi/wifi.md ${@:3}
+      glow /usr/local/bin/enumnotes/_hvi/wifi.md ${@:3}
    fi
 fi
