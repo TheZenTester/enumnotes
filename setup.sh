@@ -6,11 +6,10 @@
 ### Install Instructions: https://snapcraft.io/install/glow/debian
 if ! [ -x "$(command -v glow)" ]; then
   echo 'glow is not installed. Installing glow now...' >&2
-  sudo apt update
-  sudo apt install snapd
-  sudo service snapd start
-  sudo snap install core
-  sudo snap install glow
+  echo 'getting binary...' >&2
+  wget https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_amd64.deb ~/Downloads
+  chmod 754 ~/Downloads/glow_1.4.1_linux_amd64.deb
+  sudo apt install ~/Downloads/glow_1.4.1_linux_amd64.deb
 fi
 
 # Copy all files from github repo to directory
