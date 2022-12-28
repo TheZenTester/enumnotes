@@ -36,7 +36,7 @@ The `setup.sh` script handles all prereqs.
 git clone https://github.com/TheZenTester/enumnotes.git
 cd enumnotes
 chmod 754 setup.sh
-sudo ./setup.sh
+./setup.sh
 ```
 
 # Syntax
