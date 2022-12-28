@@ -14,7 +14,7 @@ fi
 
 # Copy all files from github repo to directory
 sudo cp -r $(pwd) /usr/local/bin/
-sudo chown -R $USER /usr/local/bin/enumnotes
+sudo chown -R $USER:$USER /usr/local/bin/enumnotes
 
 # creat symlink for `/usr/local/bin/enumnotes.sh` --> /usr/local/bin/enumnotes/enumnotes.sh
 sudo ln -s /usr/local/bin/enumnotes/enumnotes.sh /usr/local/bin/enumnotes.sh 
