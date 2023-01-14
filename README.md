@@ -10,7 +10,7 @@ The Recon "General" output:
 
 Paginated output:
 `enumnotes.sh exp msfvenom -p`
-![image](https://user-images.githubusercontent.com/96437320/209210782-105710d3-3b83-4616-8115-857b7355074d.png)
+![image](https://user-images.githubusercontent.com/96437320/212496188-cde28af4-7c91-4eb4-8171-ee6b7d845b16.gif)
 
 For comparison, Joplin output:
 ![image](https://user-images.githubusercontent.com/96437320/209211427-69142998-0bef-440c-9878-f9228fc4c430.png)
